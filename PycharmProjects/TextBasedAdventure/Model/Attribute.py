@@ -5,8 +5,8 @@ from Model.Levelable import Levelable
 
 class Attribute(Levelable):
 
-    def __init__(self, points):
-        super(Attribute, self).__init__(10, points)
+    def __init__(self, points, ):
+        super(Attribute, self).__init__(math.pow(1.5, points-1), points, 1.5)
         return
 
     def __calcMod(self):

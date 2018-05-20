@@ -4,9 +4,14 @@ import abc
 class Levelable:
 
     def __init__(self, scale, start_level):
+        self.__init__(scale, start_level, 2)
+        return
+
+    def __init__(self, scale, start_level, growth):
         self.scaling = scale
         self.experience = 0
         self.start_level = start_level
+        self.growth = growth
         return
 
     @abc.abstractmethod
@@ -25,12 +30,13 @@ class Levelable:
         current_level = self.start_level
         xp = self.experience
         scale = self.scaling
+        growth = self.growth
 
         xp -= scale
-        scale *= 2
+        scale *= growth
         while xp > 0:
             current_level += 1
             xp -= scale
-            scale *= 2
+            scale *= growth
 
         return current_level
