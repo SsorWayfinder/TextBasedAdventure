@@ -3,6 +3,8 @@ import abc
 
 class Levelable:
 
+    #TODO: change to be more like grpg9k's xp spending system.
+
     def __init__(self, scale, start_level):
         self.__init__(scale, start_level, 2)
         return

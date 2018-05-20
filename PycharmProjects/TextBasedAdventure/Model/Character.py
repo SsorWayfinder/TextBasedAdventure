@@ -12,5 +12,8 @@ class Character:
         self.int = Attribute(10)
         self.wis = Attribute(10)
         self.cha = Attribute(10)
+        self.levelables = {
+            self.str, self.con, self.dex, self.int, self.wis, self.cha
+        }
         self.inventory = Inventory()
         return
